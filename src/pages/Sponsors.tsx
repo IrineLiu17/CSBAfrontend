@@ -51,29 +51,29 @@ const Sponsors = () => {
             <p className="text-muted-foreground mb-8">Premier Partnership • Innovation Leaders</p>
 
             {/* Featured Sponsor Card */}
-            <div className="bg-primary rounded-xl overflow-hidden">
+            <div className="bg-[#F9FAFB] border border-border rounded-xl overflow-hidden">
               <div className="grid md:grid-cols-2 gap-6 p-8">
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
                       <span className="text-3xl">🏢</span>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-semibold text-primary-foreground">TechCorp Industries</h3>
+                      <h3 className="text-2xl font-semibold text-foreground">TechCorp Industries</h3>
                       <div className="flex items-center gap-2 mt-1">
-                        <Badge className="bg-primary-foreground text-primary text-xs">Title Sponsor</Badge>
-                        <span className="text-primary-foreground/70 text-sm">Partnership Since 2020</span>
+                        <Badge className="bg-primary text-primary-foreground text-xs">Title Sponsor</Badge>
+                        <span className="text-muted-foreground text-sm">Partnership Since 2020</span>
                       </div>
                     </div>
                   </div>
                   
-                  <p className="text-primary-foreground/90 mb-6">
+                  <p className="text-muted-foreground mb-6">
                     Leading technology innovation company specializing in AI and cloud computing solutions. 
                     TechCorp has been our premier partner for five consecutive years, supporting league 
                     modernization and digital transformation initiatives that enhance fan experience across all platforms.
                   </p>
 
-                  <div className="flex items-center gap-6 text-primary-foreground/70 text-sm">
+                  <div className="flex items-center gap-6 text-muted-foreground text-sm">
                     <div className="flex items-center gap-2">
                       <Globe className="w-4 h-4" />
                       <span>www.techcorp.com</span>
