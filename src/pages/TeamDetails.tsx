@@ -206,7 +206,7 @@ const TeamDetails = () => {
         </section>
 
         {/* Stats Cards */}
-        <section className="bg-background -mt-6 relative z-20">
+        <section className="bg-background py-8">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {team.stats.map((stat, index) => (
