@@ -66,7 +66,7 @@ const StarPlayers = () => {
           {players.map((player, index) => (
             <div
               key={player.name}
-              className="card-sports group"
+              className="card-sports group border border-border"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Player Image */}
