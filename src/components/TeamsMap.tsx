@@ -1,14 +1,14 @@
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import northAmericaMap from "@/assets/north-america-map.jpg";
+import usaMap from "@/assets/usa-map.jpg";
 
 const teams = [
-  { name: "Thunder Bolts", city: "New York", top: "42%", left: "78%" },
-  { name: "Steel Wolves", city: "Chicago", top: "40%", left: "65%" },
-  { name: "Fire Hawks", city: "Los Angeles", top: "55%", left: "22%" },
-  { name: "Urban Knights", city: "Miami", top: "68%", left: "78%" },
-  { name: "Bay Breakers", city: "San Francisco", top: "48%", left: "18%" },
-  { name: "Desert Storm", city: "Phoenix", top: "58%", left: "30%" },
+  { name: "Thunder Bolts", city: "New York", top: "28%", left: "85%" },
+  { name: "Steel Wolves", city: "Chicago", top: "32%", left: "65%" },
+  { name: "Fire Hawks", city: "Los Angeles", top: "55%", left: "12%" },
+  { name: "Urban Knights", city: "Miami", top: "82%", left: "80%" },
+  { name: "Bay Breakers", city: "San Francisco", top: "42%", left: "8%" },
+  { name: "Desert Storm", city: "Phoenix", top: "62%", left: "22%" },
 ];
 
 const TeamsMap = () => {
@@ -19,10 +19,10 @@ const TeamsMap = () => {
 
         {/* Map Container */}
         <div className="relative rounded-lg overflow-hidden aspect-[16/9] max-w-4xl mx-auto mb-8 border border-border shadow-[var(--shadow-card)]">
-          {/* North America Map Background */}
+          {/* USA Map Background */}
           <img
-            src={northAmericaMap}
-            alt="North America Map"
+            src={usaMap}
+            alt="USA Map"
             className="w-full h-full object-cover"
           />
 
