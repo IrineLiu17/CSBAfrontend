@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Games", href: "/#games" },
   { label: "Teams", href: "/#teams" },
-  { label: "Seasons", href: "#" },
+  { label: "Seasons", href: "/seasons" },
   { label: "News", href: "/news" },
   { label: "Sponsors", href: "#" },
   { label: "About", href: "/about" },
@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   const isInternalRoute = (href: string) => {
-    return href === '/' || href === '/about' || href === '/news';
+    return href === '/' || href === '/about' || href === '/news' || href === '/seasons';
   };
 
   return (
