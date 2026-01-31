@@ -229,7 +229,7 @@ const News = () => {
               {regularArticles.map((article) => (
                 <article
                   key={article.id}
-                  className="bg-card rounded-lg overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow duration-300"
+                  className="bg-card rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <div className="grid md:grid-cols-[1fr,200px] gap-0">
                     <div className="p-6">
