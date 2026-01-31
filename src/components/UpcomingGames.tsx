@@ -43,7 +43,7 @@ const UpcomingGames = () => {
           {upcomingGames.map((game, index) => (
             <div
               key={index}
-              className="bg-card rounded-lg p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow duration-300"
+              className="bg-card rounded-lg p-6 border border-border shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-shadow duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 {/* Teams */}
