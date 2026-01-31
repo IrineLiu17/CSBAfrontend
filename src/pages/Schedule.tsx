@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ const scheduleStats = [
 ];
 
 interface UpcomingGame {
+  id: string;
   date: string;
   time: string;
   homeTeam: { name: string; record: string };
@@ -30,6 +32,7 @@ interface CompletedGame {
 
 const upcomingGames: UpcomingGame[] = [
   {
+    id: "warriors-vs-clippers",
     date: "JAN 13",
     time: "20:00 CST",
     homeTeam: { name: "WARRIORS", record: "14-9 Record" },
@@ -38,6 +41,7 @@ const upcomingGames: UpcomingGame[] = [
     location: "Beijing Sports Arena",
   },
   {
+    id: "heat-vs-spurs",
     date: "JAN 14",
     time: "19:30 CST",
     homeTeam: { name: "HEAT", record: "11-12 Record" },
@@ -46,6 +50,7 @@ const upcomingGames: UpcomingGame[] = [
     location: "Beijing Sports Arena",
   },
   {
+    id: "thunder-vs-rockets",
     date: "JAN 15",
     time: "20:00 CST",
     homeTeam: { name: "THUNDER", record: "18-5 Record" },
@@ -54,6 +59,7 @@ const upcomingGames: UpcomingGame[] = [
     location: "Shanghai Sports Center",
   },
   {
+    id: "celtics-vs-lakers",
     date: "JAN 16",
     time: "19:00 CST",
     homeTeam: { name: "CELTICS", record: "17-6 Record" },
@@ -204,8 +210,8 @@ const Schedule = () => {
                         <div className="text-sm font-medium text-foreground">{game.venue}</div>
                         <div className="text-xs text-muted-foreground">{game.location}</div>
                       </div>
-                      <Button variant="default" size="sm">
-                        Game Details
+                      <Button variant="default" size="sm" asChild>
+                        <Link to={`/schedule/${game.id}`}>Game Details</Link>
                       </Button>
                     </div>
                   </div>
