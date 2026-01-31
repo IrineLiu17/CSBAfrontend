@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Globe, Building2 } from "lucide-react";
+import sponsorHq from "@/assets/sponsor-hq.jpg";
 
 interface Partner {
   name: string;
@@ -86,12 +87,11 @@ const Sponsors = () => {
                 </div>
 
                 <div className="hidden md:block">
-                  <div className="h-full bg-muted rounded-lg flex items-center justify-center min-h-[200px]">
-                    <div className="text-center text-muted-foreground">
-                      <Building2 className="w-16 h-16 mx-auto mb-2 opacity-50" />
-                      <p>Corporate HQ</p>
-                    </div>
-                  </div>
+                  <img 
+                    src={sponsorHq} 
+                    alt="TechCorp Corporate HQ" 
+                    className="h-full w-full object-cover rounded-lg min-h-[200px]"
+                  />
                 </div>
               </div>
             </div>
