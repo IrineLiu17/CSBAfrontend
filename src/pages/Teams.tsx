@@ -94,17 +94,17 @@ const Teams = () => {
         </section>
 
         {/* Stats & Search Bar */}
-        <section className="bg-dark py-8">
+        <section className="bg-[#F9FAFB] py-8">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               {/* Stats */}
               <div className="flex gap-8 text-center">
                 {stats.map((stat) => (
                   <div key={stat.label}>
-                    <div className="font-display text-3xl text-dark-foreground">
+                    <div className="font-display text-3xl text-foreground">
                       {stat.value}
                     </div>
-                    <div className="text-dark-foreground/60 text-sm">{stat.label}</div>
+                    <div className="text-muted-foreground text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -117,11 +117,11 @@ const Teams = () => {
                     placeholder="Search teams..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-9 w-[200px] bg-dark-foreground text-dark border-dark-foreground/20"
+                    className="pl-9 w-[200px] bg-background border-border"
                   />
                 </div>
                 <Select value={divisionFilter} onValueChange={setDivisionFilter}>
-                  <SelectTrigger className="w-[140px] bg-dark-foreground text-dark border-dark-foreground/20">
+                  <SelectTrigger className="w-[140px] bg-background border-border">
                     <SelectValue placeholder="Division" />
                   </SelectTrigger>
                   <SelectContent>
