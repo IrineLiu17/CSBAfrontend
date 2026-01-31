@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Schedule", href: "/schedule" },
-  { label: "Teams", href: "/#teams" },
+  { label: "Teams", href: "/teams" },
   { label: "Seasons", href: "/seasons" },
   { label: "News", href: "/news" },
-  { label: "Sponsors", href: "#" },
   { label: "About", href: "/about" },
 ];
 
@@ -33,7 +32,7 @@ const Header = () => {
   };
 
   const isInternalRoute = (href: string) => {
-    return href === '/' || href === '/about' || href === '/news' || href === '/seasons' || href === '/schedule';
+    return href === '/' || href === '/about' || href === '/news' || href === '/seasons' || href === '/schedule' || href === '/teams';
   };
 
   return (
