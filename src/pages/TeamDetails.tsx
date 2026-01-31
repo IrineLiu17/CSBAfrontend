@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 import { Trophy, Medal, Star } from "lucide-react";
+import teamHeroBg from "@/assets/team-hero-bg.jpg";
 
 interface Player {
   name: string;
@@ -156,12 +157,15 @@ const TeamDetails = () => {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/90 to-primary py-12 overflow-hidden">
-          {/* Basketball court pattern overlay */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-4 border-white rounded-full" />
-            <div className="absolute top-0 left-0 right-0 h-1 bg-white/30" />
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/30" />
+        <section className="relative py-12 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src={teamHeroBg} 
+              alt="Basketball court" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50" />
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
