@@ -1,24 +1,14 @@
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PlayerRankings from "@/components/PlayerRankings";
 import { Button } from "@/components/ui/button";
-import { Play, Trophy } from "lucide-react";
+import { Play } from "lucide-react";
 
 const seasonStats = [
   { value: "7", label: "Total Seasons" },
   { value: "2024-25", label: "Current Season", highlight: true },
   { value: "16", label: "Active Teams" },
   { value: "320", label: "Total Players" },
-];
-
-const rankingCategories = ["Points", "Assists", "Rebounds", "Efficiency", "Turnovers", "Minutes"];
-
-const playerRankings = [
-  { rank: 1, name: "Michael Rodriguez", team: "ROCKETS", ppg: 28.5, apg: 8.2, rpg: 11.8, eff: 24.3, to: 2.1, min: 36.2, performance: 93 },
-  { rank: 2, name: "James Thompson", team: "CELTICS", ppg: 26.8, apg: 9.1, rpg: 7.4, eff: 22.7, to: 1.8, min: 34.6, performance: 89 },
-  { rank: 3, name: "David Chen", team: "WARRIORS", ppg: 24.9, apg: 11.3, rpg: 5.7, eff: 21.8, to: 2.3, min: 32.1, performance: 85 },
-  { rank: 4, name: "Alexander Park", team: "THUNDER", ppg: 23.2, apg: 6.8, rpg: 12.5, eff: 20.9, to: 1.9, min: 35.8, performance: 83 },
-  { rank: 5, name: "Roberto Silva", team: "LAKERS", ppg: 22.7, apg: 7.9, rpg: 9.3, eff: 19.4, to: 2.0, min: 33.7, performance: 80 },
 ];
 
 const seasonHistory = [
@@ -55,8 +45,6 @@ const seasonHistory = [
 ];
 
 const Seasons = () => {
-  const [activeCategory, setActiveCategory] = useState("Points");
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -164,89 +152,7 @@ const Seasons = () => {
         </section>
 
         {/* Player Rankings */}
-        <section className="py-16 bg-secondary">
-          <div className="container mx-auto px-4">
-            <h2 className="font-display text-3xl uppercase tracking-wide italic mb-2">Player Rankings</h2>
-            <p className="text-muted-foreground mb-8">Top 20% Player Performance • Multiple Categories • 2024-25 Season</p>
-
-            {/* Category Tabs */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {rankingCategories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    activeCategory === category
-                      ? "bg-foreground text-background"
-                      : "bg-card border border-border text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
-            {/* Rankings Table */}
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left p-4 text-sm font-medium text-muted-foreground">Rank</th>
-                      <th className="text-left p-4 text-sm font-medium text-muted-foreground">Player</th>
-                      <th className="text-left p-4 text-sm font-medium text-muted-foreground">Team</th>
-                      <th className="text-center p-4 text-sm font-medium text-muted-foreground">PPG</th>
-                      <th className="text-center p-4 text-sm font-medium text-muted-foreground">APG</th>
-                      <th className="text-center p-4 text-sm font-medium text-muted-foreground">RPG</th>
-                      <th className="text-center p-4 text-sm font-medium text-muted-foreground">EFF</th>
-                      <th className="text-center p-4 text-sm font-medium text-muted-foreground">TO</th>
-                      <th className="text-center p-4 text-sm font-medium text-muted-foreground">MIN</th>
-                      <th className="text-left p-4 text-sm font-medium text-muted-foreground">Performance</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {playerRankings.map((player) => (
-                      <tr key={player.rank} className="border-b border-border last:border-0 hover:bg-muted/50">
-                        <td className="p-4">
-                          <span className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold text-white ${
-                            player.rank === 1 ? "bg-primary" :
-                            player.rank === 2 ? "bg-gray-500" :
-                            player.rank === 3 ? "bg-orange-dark" : "bg-muted-foreground"
-                          }`}>
-                            {player.rank}
-                          </span>
-                        </td>
-                        <td className="p-4 font-medium text-foreground">{player.name}</td>
-                        <td className="p-4 text-muted-foreground text-sm">{player.team}</td>
-                        <td className="p-4 text-center text-primary font-semibold">{player.ppg}</td>
-                        <td className="p-4 text-center text-foreground">{player.apg}</td>
-                        <td className="p-4 text-center text-foreground">{player.rpg}</td>
-                        <td className="p-4 text-center text-foreground">{player.eff}</td>
-                        <td className="p-4 text-center text-foreground">{player.to}</td>
-                        <td className="p-4 text-center text-foreground">{player.min}</td>
-                        <td className="p-4">
-                          <div className="flex items-center gap-2">
-                            <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-primary rounded-full" 
-                                style={{ width: `${player.performance}%` }}
-                              />
-                            </div>
-                            <span className="text-sm text-muted-foreground">{player.performance}%</span>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <Button variant="outline">View Complete Rankings</Button>
-            </div>
-          </div>
-        </section>
+        <PlayerRankings />
 
         {/* Season History */}
         <section className="py-16 bg-background">
