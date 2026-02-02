@@ -64,7 +64,7 @@ const PlayerRankings = () => {
     }
     return pages;
   };
-  return <section className="py-16 bg-secondary">
+  return <section id="player-rankings" className="py-16 bg-secondary">
       <div className="container mx-auto px-4">
         <h2 className="font-display text-3xl uppercase tracking-wide italic mb-2">Player Rankings</h2>
         <p className="text-muted-foreground mb-8">Top 100 Player Performance • Multiple Categories • 2024-25 Season</p>
