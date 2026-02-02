@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PlayerRankings from "@/components/PlayerRankings";
@@ -113,7 +114,9 @@ const Seasons = () => {
                       <Play className="w-4 h-4 mr-2" />
                       Season Highlights
                     </Button>
-                    <Button variant="outline">View Details</Button>
+                    <Button variant="outline" asChild>
+                      <Link to="/seasons/2024-25">View Details</Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -213,7 +216,9 @@ const Seasons = () => {
                           <Play className="w-3 h-3 mr-1" />
                           Season Highlights
                         </Button>
-                        <Button variant="outline" size="sm">View Details</Button>
+                        <Button variant="outline" size="sm" asChild>
+                          <Link to={`/seasons/${season.season}`}>View Details</Link>
+                        </Button>
                       </div>
                     </div>
                   </div>
