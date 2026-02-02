@@ -129,7 +129,7 @@ const Seasons = () => {
                       Season Highlights
                     </Button>
                     <Button variant="outline" asChild>
-                      <Link to="/seasons/2024-25">View Details</Link>
+                      <Link to="/schedule">View Schedule</Link>
                     </Button>
                   </div>
                 </div>
