@@ -1,8 +1,10 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Globe, Building2 } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Globe, Building2, Mail } from "lucide-react";
 import sponsorHq from "@/assets/sponsor-hq.jpg";
 
 interface Partner {
@@ -26,6 +28,8 @@ const partners: Partner[] = [
 ];
 
 const Sponsors = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -131,11 +135,59 @@ const Sponsors = () => {
               Join our growing network of partners and connect with millions of basketball fans 
               worldwide. Discover partnership opportunities that drive business growth and community impact.
             </p>
-            <Button size="lg">
+            <Button size="lg" onClick={() => setIsContactOpen(true)}>
               Contact Partnership Team
             </Button>
           </div>
         </section>
+
+        {/* Contact Modal */}
+        <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-center font-display text-2xl">Contact Us</DialogTitle>
+              <DialogDescription className="text-center">
+                Scan the QR code to add us on WeChat or send us an email
+              </DialogDescription>
+            </DialogHeader>
+            
+            <div className="flex flex-col items-center space-y-6 py-4">
+              {/* WeChat QR Code */}
+              <div className="text-center">
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-border inline-block">
+                  <div className="w-48 h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex flex-col items-center justify-center text-white">
+                    <span className="text-4xl mb-2">💬</span>
+                    <span className="text-sm font-medium">WeChat</span>
+                    <span className="text-xs opacity-80 mt-1">QR Code</span>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mt-3">
+                  Scan to add on WeChat
+                </p>
+              </div>
+
+              <div className="w-full flex items-center gap-4">
+                <div className="flex-1 h-px bg-border" />
+                <span className="text-muted-foreground text-sm">OR</span>
+                <div className="flex-1 h-px bg-border" />
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-lg w-full">
+                <Mail className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <a 
+                    href="mailto:partnership@csba-league.com" 
+                    className="text-foreground font-medium hover:text-primary transition-colors"
+                  >
+                    partnership@csba-league.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </main>
 
       <Footer />
