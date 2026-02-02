@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import heroBackground from "@/assets/hero-basketball.jpg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -63,15 +64,28 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark flex flex-col">
-      {/* Header */}
-      <header className="container mx-auto px-4 py-4">
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-dark-foreground/70 hover:text-dark-foreground transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm">Back to Home</span>
+    <div 
+      className="min-h-screen flex flex-col relative"
+      style={{
+        backgroundImage: `url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-dark/80 backdrop-blur-sm" />
+      
+      {/* Content */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Header */}
+        <header className="container mx-auto px-4 py-4">
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-dark-foreground/70 hover:text-dark-foreground transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span className="text-sm">Back to Home</span>
         </Link>
       </header>
 
@@ -255,6 +269,7 @@ const Login = () => {
           </p>
         </div>
       </main>
+      </div>
     </div>
   );
 };
