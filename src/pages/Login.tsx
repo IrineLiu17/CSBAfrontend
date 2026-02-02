@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import heroBackground from "@/assets/hero-basketball.jpg";
+import heroBackground from "@/assets/game-action.jpg";
 
 const Login = () => {
   const navigate = useNavigate();
