@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 const rankingCategories = ["Points", "Assists", "Rebounds", "Efficiency", "Turnovers", "Minutes"];
 
@@ -13,6 +14,7 @@ const generatePlayers = () => {
     const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
     const team = teams[Math.floor(Math.random() * teams.length)];
     players.push({
+      id: `player-${i}`,
       rank: i,
       name: `${firstName} ${lastName}`,
       team,
@@ -101,7 +103,14 @@ const PlayerRankings = () => {
                         {player.rank}
                       </span>
                     </td>
-                    <td className="p-4 font-medium text-foreground">{player.name}</td>
+                    <td className="p-4 font-medium text-foreground">
+                      <Link 
+                        to={`/players/${player.id}`} 
+                        className="hover:text-primary transition-colors hover:underline"
+                      >
+                        {player.name}
+                      </Link>
+                    </td>
                     <td className="p-4 text-muted-foreground text-sm">{player.team}</td>
                     <td className="p-4 text-center text-primary font-semibold">{player.ppg}</td>
                     <td className="p-4 text-center text-foreground">{player.apg}</td>
