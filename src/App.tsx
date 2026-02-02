@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import News from "./pages/News";
 import Seasons from "./pages/Seasons";
+import SeasonDetails from "./pages/SeasonDetails";
 import Schedule from "./pages/Schedule";
 import GameDetails from "./pages/GameDetails";
 import Teams from "./pages/Teams";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
           <Route path="/seasons" element={<Seasons />} />
+          <Route path="/seasons/:seasonId" element={<SeasonDetails />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/schedule/:gameId" element={<GameDetails />} />
           <Route path="/teams" element={<Teams />} />
