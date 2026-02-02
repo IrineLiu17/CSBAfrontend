@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const footerLinks = {
   quickLinks: [
     { label: "Games", href: "#games" },
@@ -102,12 +104,12 @@ const Footer = () => {
             © {currentYear} CSBA League. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-dark-foreground/50 hover:text-primary transition-colors">
+            <Link to="/privacy" className="text-dark-foreground/50 hover:text-primary transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-dark-foreground/50 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/terms" className="text-dark-foreground/50 hover:text-primary transition-colors">
               Terms of Service
-            </a>
+            </Link>
             <a href="#" className="text-dark-foreground/50 hover:text-primary transition-colors">
               Cookie Policy
             </a>
