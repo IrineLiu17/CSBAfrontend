@@ -234,16 +234,18 @@ const PlayerDetails = () => {
               </Card>
 
               {/* View Rankings Card */}
-              <Card className="hover:shadow-md transition-shadow cursor-pointer">
-                <CardContent className="p-6 flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-muted-foreground">View Complete</p>
-                    <p className="text-lg font-semibold text-foreground">League Rankings</p>
-                    <p className="text-sm text-muted-foreground">See all player standings & statistics</p>
-                  </div>
-                  <ArrowRight className="w-6 h-6 text-foreground" />
-                </CardContent>
-              </Card>
+              <Link to="/seasons#player-rankings" className="block">
+                <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+                  <CardContent className="p-6 flex items-center justify-between h-full">
+                    <div>
+                      <p className="text-sm text-muted-foreground">View Complete</p>
+                      <p className="text-lg font-semibold text-foreground">League Rankings</p>
+                      <p className="text-sm text-muted-foreground">See all player standings & statistics</p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-foreground" />
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>
