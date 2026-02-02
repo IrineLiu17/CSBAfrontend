@@ -74,7 +74,7 @@ const Login = () => {
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-dark/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-dark/70" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
