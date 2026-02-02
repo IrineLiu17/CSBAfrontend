@@ -259,7 +259,12 @@ const TeamDetails = () => {
                     <TableRow key={index}>
                       <TableCell>
                         <div>
-                          <div className="font-medium">{player.name}</div>
+                          <Link 
+                            to={`/players/${player.name.toLowerCase().replace(/\s+/g, "-")}`}
+                            className="font-medium text-primary hover:underline cursor-pointer"
+                          >
+                            {player.name}
+                          </Link>
                           <div className="text-xs text-muted-foreground">{player.role}</div>
                         </div>
                       </TableCell>
