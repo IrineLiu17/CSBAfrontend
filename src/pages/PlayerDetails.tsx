@@ -426,12 +426,7 @@ const PlayerDetails = () => {
               {/* Ability Radar */}
               <Card>
                 <CardContent className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="font-semibold">ABILITY RADAR</h3>
-                    <Button variant="outline" size="sm" className="text-primary border-primary">
-                      View Data
-                    </Button>
-                  </div>
+                  <h3 className="font-semibold mb-4">ABILITY RADAR</h3>
                   
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
