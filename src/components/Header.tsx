@@ -71,9 +71,11 @@ const Header = () => {
 
           {/* Login Button */}
           <div className="hidden md:block">
-            <Button variant="default" size="sm">
-              Login
-            </Button>
+            <Link to="/login">
+              <Button variant="default" size="sm">
+                Login
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,9 +112,11 @@ const Header = () => {
                   </a>
                 )
               ))}
-              <Button variant="default" size="sm" className="w-fit mt-2">
-                Login
-              </Button>
+              <Link to="/login">
+                <Button variant="default" size="sm" className="w-fit mt-2">
+                  Login
+                </Button>
+              </Link>
             </div>
           </nav>
         )}
