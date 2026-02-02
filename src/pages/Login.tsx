@@ -263,9 +263,9 @@ const Login = () => {
           {/* Footer Text */}
           <p className="text-center text-dark-foreground/50 text-sm mt-6">
             By continuing, you agree to our{" "}
-            <button className="text-primary hover:underline">Terms of Service</button>
+            <Link to="/terms" className="text-primary hover:underline">Terms of Service</Link>
             {" "}and{" "}
-            <button className="text-primary hover:underline">Privacy Policy</button>
+            <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
           </p>
         </div>
       </main>
