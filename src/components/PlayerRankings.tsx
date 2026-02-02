@@ -168,7 +168,7 @@ const PlayerRankings = () => {
         </div>
 
         {/* Pagination */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-6 flex items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground whitespace-nowrap">
             Showing {startIndex + 1}-{Math.min(endIndex, playerRankings.length)} of {playerRankings.length} players
           </p>
