@@ -1,22 +1,14 @@
 import { Link } from "react-router-dom";
 
-const footerLinks = {
-  quickLinks: [
-    { label: "Games", href: "#games" },
-    { label: "Teams", href: "#teams" },
-    { label: "Schedule", href: "#" },
-    { label: "Player Stats", href: "#" },
-    { label: "Standings", href: "#" },
-    { label: "News", href: "#news" },
-  ],
-  league: [
-    { label: "About Us", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Sponsors", href: "#" },
-    { label: "Media Center", href: "#" },
-    { label: "Careers", href: "#" },
-  ],
-};
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "Schedule", href: "/schedule" },
+  { label: "Teams", href: "/teams" },
+  { label: "Seasons", href: "/seasons" },
+  { label: "News", href: "/news" },
+  { label: "Sponsors", href: "/sponsors" },
+  { label: "About", href: "/about" },
+];
 
 const socialLinks = [
   { icon: "f", label: "Facebook", href: "#" },
@@ -56,31 +48,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-primary mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {footerLinks.quickLinks.map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-dark-foreground/70 hover:text-primary text-sm transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* League */}
-          <div>
-            <h4 className="font-semibold text-primary mb-4">League</h4>
-            <ul className="space-y-2">
-              {footerLinks.league.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-dark-foreground/70 hover:text-primary text-sm transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -95,6 +70,25 @@ const Footer = () => {
               <li>123 Basketball Ave</li>
               <li>New York, NY 10001</li>
             </ul>
+          </div>
+
+          {/* Title Sponsor */}
+          <div>
+            <h4 className="font-semibold text-primary mb-4">Title Sponsor</h4>
+            <div className="bg-dark-foreground/5 rounded-lg p-4">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">🏢</span>
+                <span className="font-semibold text-dark-foreground text-sm">TechCorp Industries</span>
+              </div>
+              <ul className="space-y-2 text-sm text-dark-foreground/70">
+                <li>
+                  <a href="https://www.techcorp.com" className="hover:text-primary transition-colors duration-200">
+                    www.techcorp.com
+                  </a>
+                </li>
+                <li>sponsor@techcorp.com</li>
+              </ul>
+            </div>
           </div>
         </div>
 
